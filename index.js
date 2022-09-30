@@ -9,8 +9,12 @@ app.get('/', function(req, res) {
   res.sendFile(path.join(__dirname, 'website/index.html'));
 });
 //css
-app.get('style', function(req, res) {
+app.get('/style', function(req, res) {
   res.sendFile(path.join(__dirname, 'website/style.css'));
+});
+//logo
+app.get('/logo', function(req, res) {
+  res.sendFile(path.join(__dirname, 'assets/logo.jpg'));
 });
 
 app.listen(port);
