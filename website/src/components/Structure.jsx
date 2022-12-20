@@ -9,6 +9,7 @@ import {
   MediaQuery,
   Burger,
   useMantineTheme,
+  Button,
 } from '@mantine/core';
 
 export default function Structure() {
@@ -37,7 +38,7 @@ export default function Structure() {
       }
       footer={
         <Footer height={60} p="md">
-          Application footer
+          Your mum is futoi
         </Footer>
       }
       header={
