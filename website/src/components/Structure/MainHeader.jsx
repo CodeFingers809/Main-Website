@@ -1,11 +1,13 @@
 import { Burger, Button, Header, MediaQuery, Text } from "@mantine/core";
 import React from "react";
+import { IconMoonStars } from "@tabler/icons";
+import { ActionIcon } from "@mantine/core";
 
 export default function MainHeader(props) {
 	return (
-		<Header height={{ base: 50, md: 70 }} p="md">
-			<div style={{ display: "flex", alignItems: "center", height: "100%" }}>
-				<MediaQuery largerThan="sm" styles={{ display: "none" }}>
+		<Header height={{ base: 8, md: 35 }} p="md">
+			<div style={{ display: "flex", alignItems: "center", height: "100%", justifyContent: "space-between" }}>
+				<MediaQuery>
 					<Burger
 						opened={props.opened}
 						onClick={() => props.setOpened((o) => !o)}
@@ -15,8 +17,11 @@ export default function MainHeader(props) {
 					/>
 				</MediaQuery>
 
-				<Text>Application header</Text>
-        <Button onClick={() => props.setMainTheme((props.mainTheme+1)%2)}>Change Theme</Button>
+				<ActionIcon
+					onClick={() => props.setMainTheme((props.mainTheme + 1) % 2)}
+				>
+					<IconMoonStars />
+				</ActionIcon>
 			</div>
 		</Header>
 	);
