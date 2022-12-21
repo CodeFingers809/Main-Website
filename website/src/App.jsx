@@ -4,7 +4,7 @@ import Structure from "./components/Structure";
 import { useState } from "react";
 
 export default function App() {
-	const colorschemes = [{ colorScheme: "light" }, { colorScheme: "dark" }];
+	const colorschemes = [{ colorScheme: "light",  }, { colorScheme: "dark" }];
 	const [maintheme, setMainTheme] = useState(0);
 	useEffect(() => {
 		console.log(maintheme);

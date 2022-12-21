@@ -19,13 +19,12 @@ import MainHeader from "./Structure/MainHeader";
 import { IconMoonStars } from "@tabler/icons";
 import Home from "./Home";
 // import MainHeader from './Structure/MainHeader';
-import bg from "../assets/bg-img.jpg"
+import bg from "../assets/bg-img_dark.jpg"
+import bg_light from "../assets/bg_light.png"
 
 export default function Structure({ setMainTheme, mainTheme }) {
 	const theme = useMantineTheme();
 	const [opened, setOpened] = useState(false);
-	const path =
-		"https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=720&q=80";
 	return (
 		<AppShell
 			styles={{
@@ -34,7 +33,7 @@ export default function Structure({ setMainTheme, mainTheme }) {
 						theme.colorScheme === "dark"
 							? theme.colors.dark[8]
 							: theme.colors.gray[0],
-					backgroundImage: `url("${bg}")`,
+					backgroundImage: mainTheme==1 ? `url("${bg}")` : `url("${bg_light}")`,
 					backgroundPosition: "center",
 					backgroundSize: "cover",
 					backgroundRepeat: "no-repeat",
