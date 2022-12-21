@@ -5,7 +5,7 @@ import { ActionIcon } from "@mantine/core";
 
 export default function MainHeader(props) {
 	return (
-		<Header height={{ base: 8, md: 35 }} p="md">
+		<Header height={{ base: 8, md:35 }} p="md">
 			<div style={{ display: "flex", alignItems: "center", height: "100%", justifyContent: "space-between" }}>
 				<MediaQuery>
 					<Burger
