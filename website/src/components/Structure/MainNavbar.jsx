@@ -11,7 +11,12 @@ import {
 	IconSwitchHorizontal,
 	IconLogout,
 } from "@tabler/icons";
+import { IconHome } from '@tabler/icons';
+import { IconBrandBlogger } from '@tabler/icons';
+import { IconUsers } from '@tabler/icons';
+import { IconCalendarEvent } from '@tabler/icons';
 import { MantineLogo } from "@mantine/ds";
+import logo from "../../assets/transparent_logo.png"
 
 const useStyles = createStyles((theme, _params, getRef) => {
 	const icon = getRef("icon");
@@ -92,13 +97,13 @@ const useStyles = createStyles((theme, _params, getRef) => {
 });
 
 const data = [
-	{ link: "", label: "Notifications", icon: IconBellRinging },
-	{ link: "", label: "Billing", icon: IconReceipt2 },
-	{ link: "", label: "Security", icon: IconFingerprint },
-	{ link: "", label: "SSH Keys", icon: IconKey },
-	{ link: "", label: "Databases", icon: IconDatabaseImport },
-	{ link: "", label: "Authentication", icon: Icon2fa },
-	{ link: "", label: "Other Settings", icon: IconSettings },
+	{ link: "", label: "Home", icon: IconHome },
+	{ link: "", label: "Blog", icon: IconBrandBlogger },
+	{ link: "", label: "About", icon: IconUsers },
+	{ link: "", label: "Upcoming Events", icon: IconCalendarEvent },
+	// { link: "", label: "Databases", icon: IconDatabaseImport },
+	// { link: "", label: "Authentication", icon: Icon2fa },
+	// { link: "", label: "Other Settings", icon: IconSettings },
 ];
 
 export default function MainNavbar({ opened }) {
@@ -131,13 +136,14 @@ export default function MainNavbar({ opened }) {
 		>
 			<Navbar.Section grow>
 				<Group className={classes.header} position="apart">
-					<MantineLogo size={28} />
-					<Code sx={{ fontWeight: 700 }}>v3.1.2</Code>
+					<img src={`${logo}`} alt="logo" width={100} height={90} />
+					{/* <MantineLogo size={28} /> */}
+					<Code sx={{ fontWeight: 700 }}>v1.0.0</Code>
 				</Group>
 				{links}
 			</Navbar.Section>
 
-			<Navbar.Section className={classes.footer}>
+			{/* <Navbar.Section className={classes.footer}>
 				<a
 					href="#"
 					className={classes.link}
@@ -155,7 +161,7 @@ export default function MainNavbar({ opened }) {
 					<IconLogout className={classes.linkIcon} stroke={1.5} />
 					<span>Logout</span>
 				</a>
-			</Navbar.Section>
+			</Navbar.Section> */}
 		</Navbar>
 	);
 }
