@@ -60,6 +60,7 @@ export default function Structure({ setMainTheme, mainTheme }) {
 					mainTheme={mainTheme}
 				/>
 			}
+      
 		>
 			<Home />
 		</AppShell>

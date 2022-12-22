@@ -4,7 +4,7 @@ import React from 'react'
 export default function Home() {
   return (
     <div>
-      <h1>Your mum is fat</h1>
+      <h1>Welcome to AI Colegion</h1>
     </div>
   )
 }
