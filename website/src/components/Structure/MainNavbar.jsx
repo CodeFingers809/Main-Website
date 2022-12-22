@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { createStyles, Navbar, Group, Code } from "@mantine/core";
+import { createStyles, Navbar, Group, Code, ActionIcon } from "@mantine/core";
 import {
 	IconBellRinging,
 	IconFingerprint,
@@ -11,12 +11,16 @@ import {
 	IconSwitchHorizontal,
 	IconLogout,
 } from "@tabler/icons";
-import { IconHome } from '@tabler/icons';
-import { IconBrandBlogger } from '@tabler/icons';
-import { IconUsers } from '@tabler/icons';
-import { IconCalendarEvent } from '@tabler/icons';
+import { IconHome } from "@tabler/icons";
+import { IconBrandBlogger } from "@tabler/icons";
+import { IconUsers } from "@tabler/icons";
+import { IconCalendarEvent } from "@tabler/icons";
 import { MantineLogo } from "@mantine/ds";
-import logo from "../../assets/transparent_logo.png"
+import logo from "../../assets/transparent_logo.png";
+import ReactAudioPlayer from "react-audio-player";
+import muzik from "../../assets/muzik.mp3";
+import { IconPlayerPause } from '@tabler/icons';
+import { IconPlayerPlay } from '@tabler/icons';
 
 const useStyles = createStyles((theme, _params, getRef) => {
 	const icon = getRef("icon");
@@ -106,7 +110,7 @@ const data = [
 	// { link: "", label: "Other Settings", icon: IconSettings },
 ];
 
-export default function MainNavbar({ opened }) {
+export default function MainNavbar(props) {
 	const { classes, cx } = useStyles();
 	const [active, setActive] = useState("Billing");
 
@@ -131,8 +135,8 @@ export default function MainNavbar({ opened }) {
 		<Navbar
 			p="md"
 			hiddenBreakpoint="sm"
-			hidden={!opened}
-			width={{ sm: 200, lg: 300 }}
+			hidden={!props.opened}
+			width={{ sm: 150, lg: 300 }}
 		>
 			<Navbar.Section grow>
 				<Group className={classes.header} position="apart">
@@ -143,25 +147,25 @@ export default function MainNavbar({ opened }) {
 				{links}
 			</Navbar.Section>
 
-			{/* <Navbar.Section className={classes.footer}>
-				<a
-					href="#"
+			<Navbar.Section className={classes.footer}>
+				<div
 					className={classes.link}
-					onClick={(event) => event.preventDefault()}
+					// onClick={(event) => event.preventDefault()}
 				>
-					<IconSwitchHorizontal className={classes.linkIcon} stroke={1.5} />
-					<span>Change account</span>
-				</a>
+					<h4>Play some muzik ?</h4>
+				</div>
 
-				<a
-					href="#"
+				{/* <div
 					className={classes.link}
 					onClick={(event) => event.preventDefault()}
-				>
-					<IconLogout className={classes.linkIcon} stroke={1.5} />
-					<span>Logout</span>
-				</a>
-			</Navbar.Section> */}
+				> */}
+					{/* <ReactAudioPlayer src={`${muzik}`} autoPlay volume={0.1} controls loop={true} /> */}
+					<ActionIcon onClick={() => props.setMusic(!props.music)}>
+						{props.music ? <IconPlayerPause /> : <IconPlayerPlay />}
+						
+					</ActionIcon>
+				{/* </div> */}
+			</Navbar.Section>
 		</Navbar>
 	);
 }

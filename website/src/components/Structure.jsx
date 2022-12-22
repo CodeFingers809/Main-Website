@@ -25,6 +25,7 @@ import bg_light from "../assets/bg_light.png"
 export default function Structure({ setMainTheme, mainTheme }) {
 	const theme = useMantineTheme();
 	const [opened, setOpened] = useState(false);
+	const [music, setMusic] = useState(true)
 	return (
 		<AppShell
 			styles={{
@@ -43,7 +44,7 @@ export default function Structure({ setMainTheme, mainTheme }) {
 			asideOffsetBreakpoint="sm"
 			navbar={
 				// <MainNavbar opened={opened} />
-				opened ? <MainNavbar opened={opened} /> : null
+				opened ? <MainNavbar opened={opened} music={music} setMusic={setMusic} /> : null
 			}
 			// aside={
 			//   <MainSideBar />
@@ -62,7 +63,7 @@ export default function Structure({ setMainTheme, mainTheme }) {
 			}
       
 		>
-			<Home />
+			<Home music={music} />
 		</AppShell>
 		// <div>
 		// 	<Header >
