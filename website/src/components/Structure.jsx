@@ -19,8 +19,9 @@ import MainHeader from "./Structure/MainHeader";
 import { IconMoonStars } from "@tabler/icons";
 import Home from "./Home";
 // import MainHeader from './Structure/MainHeader';
-import bg from "../assets/bg-img_dark.jpg"
-import bg_light from "../assets/bg_light.png"
+import bg from "../assets/bg-img_dark_opac.png"
+import bg_light from "../assets/bg_light_opac.png"
+
 
 export default function Structure({ setMainTheme, mainTheme }) {
 	const theme = useMantineTheme();
@@ -63,7 +64,7 @@ export default function Structure({ setMainTheme, mainTheme }) {
 			}
       
 		>
-			<Home music={music} />
+			<Home music={music} mainTheme={mainTheme} />
 		</AppShell>
 		// <div>
 		// 	<Header >

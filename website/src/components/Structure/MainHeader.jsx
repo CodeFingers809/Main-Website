@@ -1,11 +1,11 @@
 import { Burger, Button, Header, MediaQuery, Text } from "@mantine/core";
 import React from "react";
-import { IconMoonStars } from "@tabler/icons";
+import { IconMoonStars, IconSun } from "@tabler/icons";
 import { ActionIcon } from "@mantine/core";
 
 export default function MainHeader(props) {
 	return (
-		<Header height={{ base: 25, md:35 }} p="md">
+		<Header height={{ base: 25, md:40 }} p="md">
 			<div style={{ display: "flex", alignItems: "center", height: "100%", justifyContent: "space-between" }}>
 				<MediaQuery>
 					<Burger
@@ -20,7 +20,8 @@ export default function MainHeader(props) {
 				<ActionIcon
 					onClick={() => props.setMainTheme((props.mainTheme + 1) % 2)}
 				>
-					<IconMoonStars />
+					{props.mainTheme == 1 ? <IconSun fill="#FFF" /> : <IconMoonStars fill="#000"  />}
+					
 				</ActionIcon>
 			</div>
 		</Header>
